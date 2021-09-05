@@ -144,7 +144,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
         if title_id is None:
             return self.queryset
         title = get_object_or_404(Title, pk=title_id)
-        #queryset = title.reviews.all()
+        # queryset = title.reviews.all()
         return title.reviews.all()
 
     def perform_create(self, serializer):
@@ -165,7 +165,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         if review_id is None or title_id is None:
             return self.queryset
         review = get_object_or_404(Review, title__pk=title_id, pk=review_id)
-        #queryset = review.comments.all()
+        # queryset = review.comments.all()
         return review.comments.all()
 
     def perform_create(self, serializer):
