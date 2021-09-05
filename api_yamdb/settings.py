@@ -1,4 +1,5 @@
 import os
+import sys
 from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -65,6 +66,9 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT'),
     }
 }
+if 'test' in sys.argv or 'test\_coverage' in sys.argv: #Covers regular testing and django-coverage
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default']['NAME'] = ':memory:'
 
 AUTH_USER_MODEL = 'api.CustomUser'
 
