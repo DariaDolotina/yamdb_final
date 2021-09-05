@@ -3,13 +3,11 @@ from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-
-from rest_framework import filters, mixins, viewsets, status
+from rest_framework import filters, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.permissions import (
-    AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly,
-)
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -17,11 +15,10 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .filters import TitleFilter
 from .models import Category, Comment, CustomUser, Genre, Review, Title
 from .permissions import IsAdmin, IsAuthor, IsModer, IsOwner, ReadOnly
-from .serializers import (
-    CategorySerializer, CommentSerializer, GenreSerializer, NewUserSerializer,
-    ReviewSerializer, TitleReadOnlySerializer, TitleSerializer,
-    TokenSerializer, UserSerializer,
-)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, NewUserSerializer, ReviewSerializer,
+                          TitleReadOnlySerializer, TitleSerializer,
+                          TokenSerializer, UserSerializer)
 
 
 class APINewUser(APIView):
