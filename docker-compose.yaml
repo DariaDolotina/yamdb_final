@@ -14,7 +14,6 @@ services:
     # volume и связанная с ним директория в контейнере
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    # адрес файла, где хранятся переменные окружения
     env_file:
       - ./.env
   web:
