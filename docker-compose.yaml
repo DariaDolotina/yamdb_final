@@ -18,7 +18,6 @@ services:
       - ./.env
   web:
     image: happytreefriend/yamdb_final
-    build: .
     restart: always
     command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
     ports:
