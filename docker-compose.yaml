@@ -20,21 +20,15 @@ services:
     image: happytreefriend/yamdb_final
     restart: always
     command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     volumes:
-        # Контейнер web будет работать с данными, хранящиеся в томе static_value, 
-        # через свою директорию /code/static/
       - static_value:/code/static/
-  
-        # Данные, хранящиеся в томе media_value, будут доступны в контейнере web 
-        # через директорию /code/media/
       - media_value:/code/media/
     depends_on:
       - db
     env_file:
       - ./.env
-    # "зависит от", 
 
   # Новый контейнер
   nginx:
