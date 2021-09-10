@@ -54,11 +54,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: 'just-a-placeholder'
+      # - name: Install SSH Key
+        # uses: shimataro/ssh-key-action@v2
+        # with:
+          # key: ${{ secrets.SSH_KEY }}
+          # known_hosts: 'just-a-placeholder'
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -80,7 +80,7 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d
             sudo docker-compose exec -T web python manage.py migrate auth
-            sudo docker-compose exec -T web python3 manage.py migrate --run-syncdb
+            sudo docker-compose exec -T web python manage.py migrate --run-syncdb
             sudo docker-compose exec -T web python manage.py collectstatic --no-input
   send_message:
     runs-on: ubuntu-latest
