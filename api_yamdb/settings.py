@@ -67,10 +67,6 @@ DATABASES = {
     }
 }
 
-# , default='TeddyBear1410'
-# , default='postgres'
-# , default='django.db.backends.postgresql'
-
 if 'test' in sys.argv or "test\_coverage" in sys.argv:  # Covers regular testing and django-coverage
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
     DATABASES['default']['NAME'] = ':memory:'
