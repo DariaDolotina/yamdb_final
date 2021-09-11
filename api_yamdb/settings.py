@@ -68,7 +68,7 @@ DATABASES = {
 }
 
 if 'test' or r'test\_coverage' in sys.argv in sys.argv:  # Covers regular testing and django-coverage
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
     DATABASES['default']['NAME'] = ':memory:'
 
 AUTH_USER_MODEL = 'api.CustomUser'
