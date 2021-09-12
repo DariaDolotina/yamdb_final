@@ -1,7 +1,8 @@
 ![example workflow](https://github.com/DariaDolotina/yamdb_final/actions/workflows/main.yml/badge.svg)
 # api_yamdb
 
-http://130.193.38.233/admin/
+For more information visit:
+http://130.193.38.233/redoc/
 
 ## Table of contents
 * [General info](#general-info)
@@ -10,8 +11,6 @@ http://130.193.38.233/admin/
 
 ## General info
 api_yamdb is a REST API where authenticated users can post Reviews to different Titles. There are several Categories of Titles: books, music and movies. Users can also leave comments on reviews.
-
-For more information visit /redoc (available after running the project)
 
 ## Technologies
 The project was created with:
