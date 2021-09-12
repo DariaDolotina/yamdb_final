@@ -1,5 +1,8 @@
 ![example workflow](https://github.com/DariaDolotina/yamdb_final/actions/workflows/main.yml/badge.svg)
 # api_yamdb
+
+http://130.193.38.233/admin/
+
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)

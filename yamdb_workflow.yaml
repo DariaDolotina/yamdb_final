@@ -42,6 +42,7 @@ jobs:
           tags: happytreefriend/yamdb_final
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
